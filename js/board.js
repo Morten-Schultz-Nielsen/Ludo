@@ -476,6 +476,7 @@ class Dice {
             let slerpDone = Math.pow(this.Rolling / 2000, 2);
             this.Rotation += slerpDone * 0.2;
             this.Rolling = Math.max(this.Rolling - 40, 0);
+
             if (slerpDone > 0.2) {
                 this.NextNumberChange -= slerpDone * 300;
             }
@@ -483,7 +484,7 @@ class Dice {
                 this.Number = Math.floor(Math.random() * 8) + 1;
                 this.NextNumberChange += 500;
             }
-        } 
+        }
     }
 
     DoneRolling() {
@@ -552,12 +553,12 @@ class Dice {
 
     Roll() {
         if (!this.Rolled) {
-            this.Rolling = 2000;
+            this.Rolling = 1500;
             this.Rolled = true;
-        } else if (this.Rolling > 500) {
-            this.Rolling = 10;
-            this.Number = Math.floor(Math.random() * 8) + 1;
-        }
+        } //else if (this.Rolling > 500) {
+        //    this.Rolling = 10;
+        //    this.Number = Math.floor(Math.random() * 8) + 1;
+        //}
     }
 }
 
